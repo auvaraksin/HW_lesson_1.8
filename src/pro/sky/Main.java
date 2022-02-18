@@ -70,6 +70,30 @@ public class Main {
         }
     }
 
+    //task 6
+    public static int[] generateRandomArray() {
+        java.util.Random random = new java.util.Random();
+        int[] arr = new int[30];
+        for (int i = 0; i < arr.length; i++) {
+            arr[i] = random.nextInt(100_000) + 100_000;
+        }
+        return arr;
+    }
+
+    public static int calculateTotalSum (int[] arr) {
+        int totalSum = 0;
+        for (int i = 0; i < arr.length; i++) {
+            totalSum += arr[i];
+        }
+        return totalSum;
+    }
+
+    public static float calculateAverageDayExpenditure (int totalSum, int lengthArr) {
+        float averageDayExpenditure = totalSum;
+        averageDayExpenditure = averageDayExpenditure / lengthArr;
+        return averageDayExpenditure;
+    }
+
     public static void main(String[] args) {
         System.out.println("Домашнее задание к уроку 1.8 Методы");
         System.out.println("Задание 1");
@@ -95,5 +119,11 @@ public class Main {
         System.out.println();
         reverseArray(array);
         System.out.println();
+        System.out.println("Задание 6");
+        int[] arr = generateRandomArray();
+        int totalSum = calculateTotalSum(arr);
+        int lenghtArr = arr.length;
+        float averageDayExpenditure = calculateAverageDayExpenditure(totalSum, lenghtArr);
+        System.out.println("Средняя сумма трат в день за месяц составила " + averageDayExpenditure + " рублей");
     }
 }
